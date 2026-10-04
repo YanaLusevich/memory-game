@@ -49,7 +49,6 @@ main {
 
 .card {
     aspect-ratio: 1 / 1;
-    background-color: #d05663;
     border-radius: 10px;
     cursor: pointer;
     width: 150px;
@@ -93,4 +92,125 @@ main {
 }
 .card.flipped .card-inner {
     transform: rotateY(180deg);
+}
+
+/*Modal*/
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #f4d6a0;
+    padding: 30px;
+    border-radius: 15px;
+    min-width: 300px;
+    text-align: center;
+    font-family: 'Handgeschrieben';
+}
+
+.modal-close {
+    background-color: #748b6f;
+    color: #2a403d;
+    border: #2a403d 1px solid;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-family: 'Handgeschrieben';
+}
+
+.modal-close:hover {
+    background-color: #2a403d;
+    color: #748b6f;
+    transition: all 0.3s ease;
+}
+
+.modal-newGame {
+    background-color: #748b6f;
+    color: #2a403d;
+    border: #2a403d 1px solid;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-family: 'Handgeschrieben';
+}
+
+.modal-newGame:hover {
+    background-color: #2a403d;
+    color: #748b6f;
+    transition: all 0.3s ease;
+}
+
+/* Leaderboard */
+.modal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.modal th,
+.modal td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #2a403d;
+}
+
+.modal th {
+    font-weight: bold;
+}
+
+.modal td {
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.counters {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.counters p {
+    margin: 0;
+    padding: 10px 25px;
+    background-color: #748b6f;
+    color: #2a403d;
+    border: #2a403d 1px solid; 
+    border-radius: 25px;
+    font-family: 'Handgeschrieben';
+    font-size: 22px;
+    min-width: 120px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 20px;
+        padding-bottom: 40px;
+    }
+    main {
+        padding: 0 20px;
+    }
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    .card {
+        width: 100%;
+        height: auto;
+    }
 }
